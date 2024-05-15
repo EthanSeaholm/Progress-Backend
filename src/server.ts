@@ -21,5 +21,5 @@ mongoose.connect(env.MONGO_CONNECTION_STRING)
         });
     })
     .catch((error) => {
-        console.error("Error connecting to the database: ", error)
+        console.error("Error connecting to the database: ", error);
     });
