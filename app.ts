@@ -1,13 +1,13 @@
 import "dotenv/config";
 import express, { NextFunction, Request, Response } from "express";
-import entriesRoutes from "./routes/entries";
-import userRoutes from "./routes/users";
+import entriesRoutes from "./src/routes/entries";
+import userRoutes from "./src/routes/users";
 import morgan from "morgan";
 import createHttpError, { isHttpError } from "http-errors";
 import session from "express-session";
-import env from "./util/validateEnv";
+import env from "./src/util/validateEnv";
 import MongoStore from "connect-mongo";
-import { requiresAuth } from "./middleware/auth";
+import { requiresAuth } from "./src/middleware/auth";
 
 /**
  * This file launches the Express application that the backend is built on.

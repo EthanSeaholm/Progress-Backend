@@ -1,6 +1,6 @@
 import cors from "cors";
 import app from "./app";
-import env from "./util/validateEnv";
+import env from "./src/util/validateEnv";
 import mongoose from "mongoose";
 
 /**
