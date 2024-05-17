@@ -3,14 +3,14 @@
   "regions": ["iad1"],
   "builds": [
     {
-      "src": "server.ts",
+      "src": "src/server.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "server.ts"
+      "dest": "src/server.ts"
     }
   ]
 }
