@@ -1,4 +1,5 @@
 import cors from "cors";
+import { IncomingMessage, ServerResponse } from "http";
 import app from "./app";
 import env from "./util/validateEnv";
 import mongoose from "mongoose";
@@ -23,3 +24,15 @@ mongoose.connect(env.MONGODB_URI)
     .catch((error) => {
         console.error("Error connecting to the database: ", error);
     });
+
+export default (req: IncomingMessage, res: ServerResponse) => {
+    if (!req.url || !req.url.startsWith('/api')) {
+        res.writeHead(301, {
+            Location: '/api',
+        });
+        res.end();
+        return;
+    }
+
+    return app(req, res);
+};
