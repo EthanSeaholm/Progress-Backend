@@ -1,12 +1,6 @@
 {
   "version": 2,
   "regions": ["iad1"],
-  "builds": [
-    {
-      "src": "server.ts",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
       "src": "/(.*)",

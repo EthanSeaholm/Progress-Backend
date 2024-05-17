@@ -13,7 +13,7 @@ const port = env.PORT;
 app.use(cors());
 
 // connects application to MongoDB database
-mongoose.connect(env.MONGODB_URI)
+const connection = mongoose.connect(env.MONGODB_URI)
     .then(() => {
         console.log("Mongoose connected");
         app.listen(port, () => {
@@ -23,3 +23,5 @@ mongoose.connect(env.MONGODB_URI)
     .catch((error) => {
         console.error("Error connecting to the database: ", error);
     });
+
+export default connection;
