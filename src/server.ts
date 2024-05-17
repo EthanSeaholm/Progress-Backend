@@ -8,7 +8,7 @@ import mongoose from "mongoose";
  * If an error occurs, it will be caught and logged to the console.
  */
 
-const port = env.PORT || 5000;
+const port = env.PORT;
 
 app.use(cors());
 
@@ -22,7 +22,4 @@ mongoose.connect(env.MONGODB_URI)
     })
     .catch((error) => {
         console.error("Error connecting to the database: ", error);
-        process.exit(1);
     });
-
-export default app;
